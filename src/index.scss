@@ -32,11 +32,12 @@ body {
 
 input {
   font-size: 18px;
-  padding: 10px 10px 10px 5px;
+  padding: 8px 16px;
   display: block;
-  width: 300px;
   border: none;
   border-bottom: 1px solid #757575;
+  margin-top: 16px;
+  width: 260px;
 }
 
 input:focus {
@@ -71,7 +72,7 @@ input:valid~label {
 .bar {
   position: relative;
   display: block;
-  width: 300px;
+  width: 260px;
 }
 
 .bar:before,
@@ -152,3 +153,4 @@ input:focus~.highlight {
     background: transparent;
   }
 }
+

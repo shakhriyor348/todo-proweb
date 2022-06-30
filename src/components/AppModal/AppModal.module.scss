@@ -11,13 +11,39 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.35);
 
-    &__form {
+    &__wrapper {
         max-width: 312px;
         width: 100%;
         background: linear-gradient(0deg, rgba(103, 80, 164, 0.11), rgba(103, 80, 164, 0.11)), #FFFBFE;
         border-radius: 28px;
+        padding: 24px;
     }
 
 
-}
+    &__btns {
+        display: flex;
+        justify-content: flex-end;
+    }
 
+    &__cancel {
+        border: none;
+        margin-right: 32px;
+        letter-spacing: 0.1px;
+        text-transform: uppercase;
+        color: #CF1B1B;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+    &__add {
+        border: none;
+        letter-spacing: 0.1px;
+        text-transform: uppercase;
+        color: #6750A4;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+}
