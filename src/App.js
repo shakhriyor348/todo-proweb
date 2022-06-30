@@ -4,8 +4,8 @@ import Container from "./components/Container";
 import TodoNav from "./components/TodoNav";
 
 
-// const date = `${new Date().getDate()}.${new Date().getMonth()}.${new Date().getFullYear()}`
-// console.log(date);
+const date = `${new Date().getDate()}.${new Date().getMonth()}.${new Date().getFullYear()}`
+console.log(date);
 
 function App() {
   const [openSearch, setOpenSearch] = useState(false) 
