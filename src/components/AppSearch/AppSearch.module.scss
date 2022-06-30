@@ -1,0 +1,20 @@
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: #F3EDF7;
+    cursor: pointer;
+    transition: 1s;
+    form {
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding-left: 110px;
+        background: inherit;
+    }
+}

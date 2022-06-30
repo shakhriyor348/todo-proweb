@@ -1,0 +1,18 @@
+.appHeader__wrapper {
+    background: #F3EDF7;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    &-title {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: #1C1B1F;
+        margin: 0 auto;
+    }
+  
+    &-icon {
+        margin-right: 16px;
+        cursor: pointer;
+    }
+}

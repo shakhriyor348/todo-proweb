@@ -1,0 +1,21 @@
+.todo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    &__title {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+        color: #323232;
+    }
+
+    &__span {
+        margin-left: 15px;
+        letter-spacing: 0.1px;
+        color: #6750A4;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
