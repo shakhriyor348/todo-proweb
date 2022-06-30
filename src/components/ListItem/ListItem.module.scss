@@ -1,0 +1,77 @@
+.list {
+    background: linear-gradient(0deg, rgba(103, 80, 164, 0.05), rgba(103, 80, 164, 0.05)), #FFFBFE;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        color: #1C1B1F;
+    }
+
+    &__date {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        color: #CAC4D0;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        color: #49454F;
+        margin: 16px 0;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        justify-content: flex-end;
+
+        &-edit,
+        &-trash {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &-editText {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.1px;
+            text-transform: uppercase;
+            color: #6750A4;
+            margin-left: 11px;
+        }
+
+        &-trashText {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.1px;
+            text-transform: uppercase;
+            color: #CF1B1B;
+            margin-left: 8px;
+        }
+    }
+
+
+}
+
+.grid {
+    width: 100%;
+    background: linear-gradient(0deg, rgba(103, 80, 164, 0.05), rgba(103, 80, 164, 0.05)), #FFFBFE;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 16px;
+}
