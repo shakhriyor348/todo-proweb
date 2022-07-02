@@ -111,7 +111,7 @@ function App() {
         <TodoNav openSearch={openSearch} onClickButton={onClickButton} grid={grid} />
         <div className={grid ? '' : 'grid'}>
           {
-            lists.map(list => (
+            lists.filter(list => list.title.toLowerCase().includes(searchValue.toLowerCase())).map(list => (
               <ListItem key={list.id} list={list} removeListItem={removeListItem} onEditListItem={onEditListItem} />
             ))
           }
