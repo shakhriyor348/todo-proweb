@@ -5,7 +5,7 @@ import AppSearch from '../AppSearch';
 import classes from './AppHeader.module.scss'
 
 
-const AppHeader = ({setOpenSearch, openSearch, searchValue, onChangeSearchInput}) => {
+const AppHeader = ({setOpenSearch, openSearch, searchValue, onChangeSearchInput, setSearchValue}) => {
    
 
     const handleOpenModal = () => {
@@ -17,7 +17,7 @@ const AppHeader = ({setOpenSearch, openSearch, searchValue, onChangeSearchInput}
     }
 
     return (
-        openSearch ? <AppSearch closeModal={handleCloseModal} searchValue={searchValue} onChangeSearchInput={onChangeSearchInput}/> :
+        openSearch ? <AppSearch closeModal={handleCloseModal} searchValue={searchValue} onChangeSearchInput={onChangeSearchInput} setSearchValue={setSearchValue}/> :
             <div className={classes['appHeader__wrapper']}>
                 <h2 className={classes['appHeader__wrapper-title']}>Заметки</h2>
                 <div className={classes['appHeader__wrapper-icon']} onClick={handleOpenModal}>

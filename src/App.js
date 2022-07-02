@@ -95,7 +95,7 @@ function App() {
 
   return (
     <div className="App">
-      <AppHeader openSearch={openSearch} setOpenSearch={setOpenSearch} searchValue={searchValue} onChangeSearchInput={onChangeSearchInput} />
+      <AppHeader openSearch={openSearch} setOpenSearch={setOpenSearch} searchValue={searchValue} onChangeSearchInput={onChangeSearchInput} setSearchValue={setSearchValue}/>
       <Container>
         <TodoNav openSearch={openSearch} onClickButton={onClickButton} grid={grid} />
         <div className={grid ? '' : 'grid'}>
