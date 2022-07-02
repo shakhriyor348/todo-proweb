@@ -7,7 +7,7 @@ import ListItem from './components/ListItem';
 import TodoNav from "./components/TodoNav";
 
 
-const date = `${new Date().getDate()}.${new Date().getMonth()}.${new Date().getFullYear()}`
+const date = `${new Date().getDate()}.${new Date().getMonth() + 1}.${new Date().getFullYear()}`
 
 const getLocalStorage = () => {
   let list = localStorage.getItem('list')
