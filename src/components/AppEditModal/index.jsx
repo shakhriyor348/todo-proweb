@@ -3,13 +3,16 @@ import React from 'react'
 import classes from './AppEditModal.module.scss'
 
 const AppEditModal = ({ removeAddModal, editTitleValue, editContentValue, onChangeEditContent,
-    onChangeEditTitle, onEditList, lists }) => {
-    const listEdit = () => {
-        removeAddModal()
-        lists.map(list => {
-            return onEditList(list.id)
-        })
-    }
+    onChangeEditTitle, onEditList, list }) => {
+        const listEdit = () => {
+            if(editTitleValue) {
+                onEditList(list.id, editTitleValue, editContentValue)
+                removeAddModal()
+            }else {
+                window.alert('Введите корректные данные')
+            }
+        }
+
     return (
         <div className={classes['modal']}>
             <div className={classes['modal__wrapper']}>

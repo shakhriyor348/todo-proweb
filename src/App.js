@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import AppEditModal from './components/AppEditModal';
 import AppHeader from "./components/AppHeader";
 import AppAddModal from './components/AppModal';
 import Button from './components/Button';
@@ -12,9 +11,9 @@ const date = `${new Date().getDate()}.${new Date().getMonth()}.${new Date().getF
 
 const getLocalStorage = () => {
   let list = localStorage.getItem('list')
-  if(list) {
+  if (list) {
     return (list = JSON.parse(localStorage.getItem('list')))
-  }else {
+  } else {
     return []
   }
 }
@@ -23,13 +22,11 @@ function App() {
   const [openSearch, setOpenSearch] = useState(false)
   const [grid, setGrid] = useState(false)
   const [showAddModal, setShowAddModal] = useState(false)
-  const [showEditModal, setShowEditModal] = useState(false)
   const [lists, setList] = useState(getLocalStorage())
   const [title, setTitle] = useState('')
   const [contentInput, setContentInput] = useState('')
   const [searchValue, setSearchValue] = useState('')
-  const [editTitleValue, serEditTitleValue] = useState('')
-  const [editContentValue, setEditContentValue] = useState('')
+
 
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(lists))
@@ -45,24 +42,18 @@ function App() {
 
   const handleRemoveAddModal = () => {
     setShowAddModal(false)
-    setShowEditModal(false)
+
   }
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value)
-    serEditTitleValue(e.target.value)
   }
-  const onChangeEditTitle = (e) => {
-    serEditTitleValue(e.target.value)
-  }
+
 
   const onChangeContent = (e) => {
     setContentInput(e.target.value)
-    setEditContentValue(e.target.value)
   }
-  const onChangeEditContent = (e) => {
-    setEditContentValue(e.target.value)
-  }
+
 
   const onChangeSearchInput = (e) => {
     setSearchValue(e.target.value)
@@ -74,18 +65,21 @@ function App() {
       id: Math.random().toString(36).substr(2, 9), title: title, date: date, text: contentInput
     }
 
-    setList([...lists, newList])
-    setShowAddModal(false)
-    setTitle('')
-    setContentInput('')
+      setList([...lists, newList])
+      setShowAddModal(false)
+      setTitle('')
+      setContentInput('')
+    
+ 
+
   }
 
-  const onEditList = (listId) => {
+  const onEditList = (listId, title, text) => {
     const newList = lists.map(list => {
       if (list.id === listId) {
-        list.title = editTitleValue
+        list.title = title
         list.date = date
-        list.text = editContentValue
+        list.text = text
       }
       return list
     })
@@ -97,11 +91,6 @@ function App() {
   }
 
 
-  const onEditListItem = () => {
-    serEditTitleValue('')
-    setEditContentValue('')
-    setShowEditModal(true)
-  }
 
 
   return (
@@ -112,7 +101,7 @@ function App() {
         <div className={grid ? '' : 'grid'}>
           {
             lists.filter(list => list.title.toLowerCase().includes(searchValue.toLowerCase())).map(list => (
-              <ListItem key={list.id} list={list} removeListItem={removeListItem} onEditListItem={onEditListItem} />
+              <ListItem key={list.id} list={list} removeListItem={removeListItem} removeAddModal={handleRemoveAddModal} onEditList={onEditList} />
             ))
           }
         </div>
@@ -125,7 +114,7 @@ function App() {
         </Button>
       </div>
       {showAddModal && <AppAddModal onChangeContent={onChangeContent} contentInput={contentInput} onChangeTitle={onChangeTitle} title={title} removeAddModal={handleRemoveAddModal} addListItem={addListItem} />}
-      {showEditModal && <AppEditModal editTitleValue={editTitleValue} editContentValue={editContentValue} removeAddModal={handleRemoveAddModal} onChangeEditContent={onChangeEditContent} onChangeEditTitle={onChangeEditTitle} onEditList={onEditList} lists={lists} />}
+
     </div>
   );
 }
