@@ -1,7 +1,7 @@
 import React from 'react'
 
 import classes from './AppSearch.module.scss'
-const AppSearch = ({ closeModal }) => {
+const AppSearch = ({ closeModal, searchValue, onChangeSearchInput }) => {
     return (
         <div className={classes['search']}>
             <div className={'search__arrow'} onClick={closeModal}>
@@ -10,7 +10,7 @@ const AppSearch = ({ closeModal }) => {
                 </svg>
             </div>
             <form>
-                <input type="text" className={classes['search__input']} placeholder='Поиск...' />
+                <input type="text" className={classes['search__input']} placeholder='Поиск...' value={searchValue} onChange={onChangeSearchInput} />
             </form>
             <div className={classes['search__close']} onClick={closeModal}>
                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
